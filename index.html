@@ -6,102 +6,197 @@
     <title>HMI Invila™ - KIW Semarang</title>
     <style>
         :root {
-            --bg-dark: #0b0e14;
-            --panel-bg: #161b22;
-            --accent-blue: #00a3ff;
-            --text-main: #e6edf3;
-            --kiw-purple: #3e2b85; /* Warna khas dari logo KIW */
+            /* Warna Latar Belakang & Panel */
+            --bg-dark: #0d1117; 
+            --panel-bg: #1c2128; 
+            --border-color: #30363d;
+
+            /* Warna Aksen & Branding */
+            --accent-blue: #58a6ff; 
+            --kiw-purple: #4c35a6; 
+            --kiw-purple-light: #7c64d5;
+
+            /* Warna Teks */
+            --text-main: #f0f6fc;      /* Putih terang untuk keterbacaan tinggi */
+            --text-secondary: #8b949e; /* Abu-abu untuk detail */
+            --success-green: #238636;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-           <header style="
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 30px 50px; 
-    background: #0d1117; 
-    border-bottom: 4px solid #00a3ff;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
-">
-    
-    <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
-        <img src="imageedit_3_2783022419.png" alt="Invila Logo" style="height: 80px; filter: drop-shadow(0 0 10px rgba(0,163,255,0.6));">
-        <span style="color: #8b949e; font-size: 14px; margin-top: 10px; font-weight: bold; letter-spacing: 1px;">TECHNOLOGY BY INVILA™</span>
-    </div>
-
-    <div style="flex: 2; text-align: center;">
-        <h1 style="margin: 0; font-size: 32px; color: #ffffff; text-transform: uppercase; letter-spacing: 4px; font-weight: 800;">
-            Integrated Water Supply System
-        </h1>
-        <div style="margin-top: 8px; display: inline-block; padding: 5px 20px; background: rgba(0,163,255,0.1); border: 1px solid #00a3ff; border-radius: 20px;">
-            <span style="color: #00a3ff; font-weight: bold; font-size: 18px;">OPERATIONAL UNIT: SEMARANG</span>
-        </div>
-    </div>
-
-    <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-end;">
-        <img src="Logo KIW semarang.jpg" alt="KIW Logo" style="height: 70px; border-radius: 5px; background: white; padding: 5px;">
-        <span style="color: #8b949e; font-size: 14px; margin-top: 10px; font-weight: bold; letter-spacing: 1px;">MEMBER OF DANAREKSA</span>
-    </div>
-
-</header>
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* HEADER Branding Area */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: linear-gradient(90deg, #161b22 0%, #0b0e14 100%);
-            border-bottom: 2px solid var(--accent-blue);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 25px 50px; 
+            background: var(--panel-bg); 
+            border-bottom: 4px solid var(--accent-blue);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
         }
 
-        .logo-container { display: flex; align-items: center; gap: 20px; }
-        .logo-invila { height: 60px; filter: drop-shadow(0 0 5px var(--accent-blue)); }
-        .logo-kiw { height: 50px; border-left: 2px solid #555; padding-left: 20px; }
+        .header-left {
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start;
+        }
 
-        .header-title {
+        .logo-invila {
+            height: 70px; 
+            filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.4));
+        }
+
+        .tagline {
+            color: var(--text-secondary); 
+            font-size: 12px; 
+            margin-top: 8px; 
+            font-weight: bold; 
+            letter-spacing: 1.5px;
+        }
+
+        .header-center {
+            flex: 2; 
             text-align: center;
-            flex-grow: 1;
         }
 
-        .header-title h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .header-center h1 {
+            margin: 0; 
+            font-size: 28px; 
+            color: #ffffff; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            font-weight: 800;
         }
 
-        .header-title p {
-            margin: 5px 0 0;
-            color: var(--accent-blue);
-            font-weight: bold;
-            font-size: 1.1rem;
+        .status-badge {
+            margin-top: 10px; 
+            display: inline-block; 
+            padding: 6px 20px; 
+            background: rgba(88, 166, 255, 0.15); 
+            border: 1px solid var(--accent-blue); 
+            border-radius: 20px;
+        }
+
+        .status-badge span {
+            color: var(--accent-blue); 
+            font-weight: bold; 
+            font-size: 16px;
+        }
+
+        .header-right {
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-end;
+        }
+
+        .logo-kiw {
+            height: 65px; 
+            border-radius: 6px; 
+            background: #ffffff; 
+            padding: 6px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
         }
 
         /* MAIN DASHBOARD */
         main {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            gap: 20px;
-            padding: 20px;
+            gap: 25px;
+            padding: 30px;
             flex-grow: 1;
         }
 
         .card {
             background: var(--panel-bg);
             border-radius: 12px;
-            padding: 20px;
-            border: 1px solid #30363d;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .card-title {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .stat-value {
             font-size: 3.5rem;
             font-weight: bold;
             color: var(--accent-blue);
-            text-shadow: 0 0 10px rgba(0, 163, 255, 0.3);
+            text-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+            line-height: 1;
         }
+
+        .unit {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="imageedit_3_2783022419.png" alt="Invila Logo" class="logo-invila">
+        <span class="tagline">TECHNOLOGY BY INVILA™</span>
+    </div>
+
+    <div class="header-center">
+        <h1>Integrated Water Supply System</h1>
+        <div class="status-badge">
+            <span>OPERATIONAL UNIT: SEMARANG</span>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <img src="Logo KIW semarang.jpg" alt="KIW Logo" class="logo-kiw">
+        <span class="tagline">MEMBER OF DANAREKSA</span>
+    </div>
+</header>
+
+<main>
+    <div class="card">
+        <span class="card-title">Water Discharge</span>
+        <div class="stat-value">120<span class="unit">m³/h</span></div>
+    </div>
+
+    <div class="card">
+        <span class="card-title">System Efficiency</span>
+        <div class="stat-value" style="color: var(--success-green);">98<span class="unit">%</span></div>
+    </div>
+
+    <div class="card">
+        <span class="card-title">Current Pressure</span>
+        <div class="stat-value">4.2<span class="unit">bar</span></div>
+    </div>
+</main>
+
+</body>
+</html>
 
         /* WATER FLOW ANIMATION */
         .process-visual {
@@ -235,3 +330,4 @@
     </script>
 </body>
 </html>
+
