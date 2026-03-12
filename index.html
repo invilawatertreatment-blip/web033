@@ -13,6 +13,13 @@
         .active-tab { background-color: #2563eb !important; color: white !important; border-color: #2563eb !important; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
         canvas { width: 100% !important; height: 100% !important; }
 
+        /* --- PERUBAHAN LOGO BERWARNA --- */
+        .logo-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        /* ----------------------------------- */
+
         .wa-float-pill {
             display: flex !important;
             visibility: visible !important;
@@ -58,8 +65,8 @@
 
     <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
-            <a href="#" class="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity cursor-pointer">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-blue-600 rounded-[0.6rem] sm:rounded-xl flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-lg shrink-0">I</div>
+            <a href="#" class="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity cursor-pointer">
+                <div class="w-10 h-10 logo-gradient rounded-xl flex items-center justify-center text-white font-black text-xl shadow-[0_4px_12px_rgba(37,99,235,0.4)] shrink-0">I</div>
                 <div class="text-left">
                     <h1 class="font-bold text-slate-800 text-[15px] sm:text-base leading-tight">Invila™ Smart Unit</h1>
                     <p class="text-[9px] sm:text-[10px] text-slate-500 uppercase tracking-widest font-bold">Strategic Dashboard</p>
@@ -159,17 +166,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div class="space-y-2">
                             <p class="text-blue-400 font-bold text-xs uppercase tracking-widest">Kapasitas Per Bulan</p>
-                            <div class="flex items-baseline gap-2">
-                                <span id="countMonthly" class="text-5xl md:text-7xl font-black tabular-nums">0</span>
-                                <span class="text-2xl font-light opacity-50 italic">m³</span>
-                            </div>
+                            <div class="flex items-baseline gap-2"><span id="countMonthly" class="text-5xl md:text-7xl font-black tabular-nums">0</span><span class="text-2xl font-light opacity-50 italic">m³</span></div>
                         </div>
                         <div class="space-y-2 border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-12">
                             <p class="text-blue-400 font-bold text-xs uppercase tracking-widest">Kapasitas Per Tahun</p>
-                            <div class="flex items-baseline gap-2">
-                                <span id="countYearly" class="text-4xl sm:text-5xl md:text-7xl font-black tabular-nums">0</span>
-                                <span class="text-2xl font-light opacity-50 italic">m³</span>
-                            </div>
+                            <div class="flex items-baseline gap-2"><span id="countYearly" class="text-4xl sm:text-5xl md:text-7xl font-black tabular-nums">0</span><span class="text-2xl font-light opacity-50 italic">m³</span></div>
                         </div>
                     </div>
                 </div>
@@ -186,8 +187,8 @@
 
     <footer class="mt-20 pt-10 pb-12 bg-slate-950 text-center space-y-8 border-t border-slate-900">
         <div class="space-y-4">
-            <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-[0_0_20px_rgba(37,99,235,0.5)] mx-auto border border-blue-400/20">
-                <span class="drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">I</span>
+            <div class="w-14 h-14 logo-gradient rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-[0_0_25px_rgba(37,99,235,0.6)] mx-auto border border-white/20">
+                <span class="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">I</span>
             </div>
             <div class="space-y-1">
                 <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-[10px]">Engineering by Invila Engineering Systems</p>
@@ -296,7 +297,6 @@
         }
 
         window.onload = () => {
-            // Render Phase Tabs
             const tabs = document.getElementById('phaseTabs');
             phases.forEach((p, i) => {
                 const btn = document.createElement('button');
@@ -306,7 +306,6 @@
                 tabs.appendChild(btn);
             });
 
-            // Render Project Grid
             const grid = document.getElementById('projectGrid');
             grid.innerHTML = projects.map(p => `
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
@@ -328,23 +327,22 @@
                 </div>
             `).join('');
 
-            // Render Logo Mitra Cards
             const lGrid = document.getElementById('logoGrid');
             const mitraData = [
-                { name: "Cemerlang", img: "https://placehold.co/200x120/white/000?text=Cemerlang" },
-                { name: "Kievit", img: "https://placehold.co/200x120/white/000?text=Kievit" },
-                { name: "KIW", img: "https://placehold.co/200x120/white/000?text=KIW" },
-                { name: "Patria", img: "https://placehold.co/200x120/white/000?text=Patria" },
-                { name: "Petrokimia", img: "https://placehold.co/200x120/white/000?text=Petrokimia" },
-                { name: "Tirta Asasta", img: "https://placehold.co/200x120/white/000?text=Tirta+Asasta" },
-                { name: "Tirtanadi", img: "https://placehold.co/200x120/white/000?text=Tirtanadi" },
-                { name: "United Tractors", img: "https://placehold.co/200x120/white/000?text=United+Tractors" },
-                { name: "Wika", img: "https://placehold.co/200x120/white/000?text=Wika" }
+                { name: "Cemerlang", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Cemerlang" },
+                { name: "Kievit", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Kievit" },
+                { name: "KIW", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+KIW" },
+                { name: "Patria", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Patria" },
+                { name: "Petrokimia", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Petrokimia" },
+                { name: "Tirta Asasta", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Tirta+Asasta" },
+                { name: "Tirtanadi", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Tirtanadi" },
+                { name: "United Tractors", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+United+Tractors" },
+                { name: "Wika", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Wika" }
             ];
 
             lGrid.innerHTML = mitraData.map(m => `
-                <div class="bg-white rounded-xl p-4 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow h-24 sm:h-28 overflow-hidden group">
-                    <img src="${m.img}" alt="${m.name}" class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div class="bg-white rounded-xl p-4 flex items-center justify-center shadow-sm h-24 overflow-hidden group hover:shadow-md transition-all">
+                    <img src="${m.img}" alt="${m.name}" class="max-w-full max-h-full object-contain">
                 </div>
             `).join('');
 
