@@ -13,12 +13,10 @@
         .active-tab { background-color: #2563eb !important; color: white !important; border-color: #2563eb !important; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
         canvas { width: 100% !important; height: 100% !important; }
 
-        /* --- PERUBAHAN LOGO BERWARNA --- */
         .logo-gradient {
             background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        /* ----------------------------------- */
 
         .wa-float-pill {
             display: flex !important;
@@ -201,7 +199,7 @@
         <div class="max-w-6xl mx-auto pt-8 border-t border-slate-900/50 px-4">
             <p class="text-slate-400 uppercase tracking-widest text-[10px] font-bold mb-8">Mitra Industri Strategis</p>
             <div id="logoGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                </div>
+            </div>
         </div>
     </footer>
 
@@ -219,11 +217,11 @@
         ];
 
         const phases = [
-            { id: 0, name: '1. AERO-PULSE', title: 'Optimalisasi Hidrolika & Aero-Shock', desc: 'Sistem Aero-Shock memberikan hentakan udara presisi selama 0,5 detik untuk melucuti gelembung udara pada scum, memaksa lumpur mengendap secara alami.', result: 'Scum mengapung berkurang drastis.' },
-            { id: 1, name: '2. ZERO-SALT DOSING', title: 'Pengikatan Kotoran Non-Garam', desc: 'Penggunaan polimer kationik organik cair yang disuntikkan secara otomatis untuk mengikat kontaminan tanpa meningkatkan angka TDS/garam terlarut.', result: 'TDS terjaga di bawah ambang batas.' },
-            { id: 2, name: '3. INVILA HYBRID LAMELLA', title: 'Sedimentasi High-Rate', desc: 'Modul lamella dengan geometri khusus yang mampu meningkatkan kapasitas pemisahan fisik hingga 2x lipat pada footprint lahan yang sama.', result: 'Output jernih ditargetkan < 3 NTU.' },
-            { id: 3, name: '4. SMART AERO-SILICA-CARBON', title: 'Filter Adsorpsi Organik', desc: 'Pemolesan akhir menggunakan media filtrasi bertingkat untuk menyerap bau, warna, dan sisa bahan organik hasil pemotongan.', result: 'Air tidak berbau dan tidak berwarna.' },
-            { id: 4, name: '5. STERILISASI & BLENDING', title: 'Penyelesaian Mutu Akhir', desc: 'Disinfeksi klorin dosis rendah yang dikombinasikan dengan sistem blending otomatis untuk menjamin kepatuhan parameter Permenkes.', result: 'E. Coli: 0 (Mutlak Aman)' }
+            { id: 0, name: '1. AERO-PULSE', title: 'Optimalisasi Hidrolika & Aero-Shock', desc: 'Bayangkan lumpur di dalam air limbah itu seperti "balon udara kecil". Karena proses aerasi biologi (MBBR) yang sangat kuat, lumpur terjebak oleh gelembung udara mikroskopis sehingga mengapung. Aero-Shock memberikan "hentakan" udara bertekanan selama 0,5 detik di jalur air masuk untuk melucuti gelembung tersebut.', result: 'Lumpur kembali berat dan tenggelam secara alami.' },
+            { id: 1, name: '2. ZERO-SALT DOSING', title: 'Pengikatan Non-Garam & Aero-Coagulator', desc: 'Injeksi polimer kationik organik dengan dosis presisi auto-adjusting real-time untuk mengikat kotoran tanpa menambah beban garam (Klorida/TDS) ke dalam air. Strategi ini memastikan angka TDS dan TSS terjaga tetap rendah tanpa harus menggunakan mesin RO yang mahal.', result: 'TDS & TSS Terjaga Tanpa Mesin RO' },
+            { id: 2, name: '3. INVILA HYBRID LAMELLA', title: 'Sedimentasi High-Rate Kecepatan Tinggi', desc: 'Unit sedimentasi kecepatan tinggi dengan geometri lamella khusus. Footprint (kebutuhan lahan) 50% lebih hemat dibandingkan sistem konvensional namun dengan kapasitas jauh lebih besar.', result: 'Effluent < 3 NTU, Hemat Lahan 50%' },
+            { id: 3, name: '4. SMART AERO-SILICA-CARBON', title: 'Pemolesan Organik (SACF)', desc: 'Adsorpsi polutan organik dan gas terlarut menggunakan media Silica Sand dan Karbon Aktif premium. Efektif menyerap bau amis darah, warna, dan sisa bahan organik hingga COD < 20 mg/L. Sistem SACF berjalan otomatis dengan kontrol SCADA-IOT.', result: 'Effluent < 1 NTU, COD < 20 mg/L' },
+            { id: 4, name: '5. STERILISASI & BLENDING', title: 'Penyelesaian Mutu Akhir', desc: 'Injeksi klorin dosis presisi dipadukan dengan pencampuran cerdas (blending 10-15%) air segar untuk mengunci TDS < 300 mg/L sesuai Permenkes No. 2 Tahun 2023 tanpa biaya RO yang tinggi.', result: 'Target Mutu: E. Coli 0 (Mutlak)' }
         ];
 
         let finChart, scadaChart;
@@ -327,17 +325,18 @@
                 </div>
             `).join('');
 
+            // PERUBAHAN FINAL: INI ADALAH KODE YANG MENGHUBUNGKAN DENGAN GAMBAR ANDA DI GITHUB
             const lGrid = document.getElementById('logoGrid');
             const mitraData = [
-                { name: "Cemerlang", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Cemerlang" },
-                { name: "Kievit", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Kievit" },
-                { name: "KIW", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+KIW" },
-                { name: "Patria", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Patria" },
-                { name: "Petrokimia", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Petrokimia" },
-                { name: "Tirta Asasta", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Tirta+Asasta" },
-                { name: "Tirtanadi", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Tirtanadi" },
-                { name: "United Tractors", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+United+Tractors" },
-                { name: "Wika", img: "https://placehold.co/200x120/ffffff/000000?text=Logo+Wika" }
+                { name: "Cemerlang", img: "cemerlang-samudra-kontrindo - Copy.png" },
+                { name: "Kievit", img: "kievit - Copy.png" },
+                { name: "KIW", img: "kiw - Copy.png" },
+                { name: "Patria", img: "patria-maritim-perkasa - Copy.png" },
+                { name: "Petrokimia", img: "petrokimia-gresik - Copy.png" },
+                { name: "Tirta Asasta", img: "tirta-asasta-depok.png" },
+                { name: "Tirtanadi", img: "tirtanadi - Copy.png" },
+                { name: "United Tractors", img: "united-tractors.png" },
+                { name: "Wika", img: "wika.png" }
             ];
 
             lGrid.innerHTML = mitraData.map(m => `
