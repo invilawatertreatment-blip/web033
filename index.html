@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invila™ Smart Unit - Strategic Dashboard</title>
+    <title>Invila™ Smart Unit - Strategic Optimization Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -11,112 +11,144 @@
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .active-tab { background-color: #2563eb !important; color: white !important; border-color: #2563eb !important; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
-        canvas { width: 100% !important; height: 100% !important; }
-
         .logo-gradient {
             background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        
         .wa-float-pill {
             display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
             position: fixed !important;
             bottom: 24px !important; 
             right: 24px !important;
             background-color: #00a884 !important; 
             color: white !important;
             border-radius: 9999px !important; 
-            text-align: center;
             box-shadow: 0 8px 20px rgba(0, 168, 132, 0.3) !important;
             z-index: 99999 !important;
             align-items: center !important;
-            padding: 6px 14px !important; 
-            gap: 6px !important;
+            padding: 10px 20px !important; 
+            gap: 8px !important;
             transition: all 0.3s ease !important;
             text-decoration: none !important;
-            font-size: 11px !important; 
+            font-size: 13px !important; 
             font-weight: 700 !important;
-            border: none !important;
-            cursor: pointer !important;
-        }
-        .wa-float-pill:hover {
-            transform: scale(1.05) translateY(-2px) !important;
-            background-color: #008f72 !important;
-        }
-        @media (max-width: 640px) {
-            .wa-float-pill { bottom: 16px !important; right: 16px !important; padding: 5px 12px !important; font-size: 10px !important; }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 selection:bg-blue-100">
 
     <a href="https://wa.me/6285219493322?text=Halo%20Invila%2C%20saya%20ingin%20Konsultasi%20Gratis%20mengenai%20skema%20Zero-CAPEX%20untuk%20optimasi%20air%20di%20PT%20CPI%20Salatiga." 
-       target="_blank" 
-       class="wa-float-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
+       target="_blank" class="wa-float-pill">
+        <i data-lucide="phone" size="16"></i>
         <span>Konsultasi Gratis</span>
     </a>
 
     <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 sm:px-6 py-3 sm:py-4">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
-            <a href="#" class="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity cursor-pointer">
-                <div class="w-10 h-10 logo-gradient rounded-xl flex items-center justify-center text-white font-black text-xl shadow-[0_4px_12px_rgba(37,99,235,0.4)] shrink-0">I</div>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-10 h-10 logo-gradient rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shrink-0">I</div>
                 <div class="text-left">
                     <h1 class="font-bold text-slate-800 text-[15px] sm:text-base leading-tight">Invila™ Smart Unit</h1>
                     <p class="text-[9px] sm:text-[10px] text-slate-500 uppercase tracking-widest font-bold">Strategic Dashboard</p>
                 </div>
-            </a>
+            </div>
             <div class="flex gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-600">
-                <a href="#optimasi" class="hover:text-blue-600">Optimasi</a>
-                <a href="#teknologi" class="hover:text-blue-600">Teknologi</a>
-                <a href="#populasi" class="hover:text-blue-600">Populasi</a>
+                <a href="#optimasi" class="hover:text-blue-600 uppercase tracking-tighter">Optimasi</a>
+                <a href="#teknologi" class="hover:text-blue-600 uppercase tracking-tighter">Teknologi</a>
+                <a href="#populasi" class="hover:text-blue-600 uppercase tracking-tighter">Populasi</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-20 pb-32">
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-16 pb-32">
         
-        <section class="pt-10 flex flex-col justify-between gap-8 text-left animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <div class="space-y-6">
-                <div class="flex items-center gap-2 text-blue-600 font-bold tracking-widest text-[10px] uppercase">
-                    <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse shrink-0"></div>
-                    <span>Infrastruktur Air Terpercaya, Rekam Jejak Terbukti Sejak 2013</span>
+        <section class="pt-10 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div class="flex items-center gap-2 text-blue-600 font-bold tracking-widest text-[10px] uppercase">
+                <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse shrink-0"></div>
+                <span>Infrastruktur Air Terpercaya, Rekam Jejak Terbukti Sejak 2013</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+                Water-as-a-Service untuk Infrastruktur Air Bersih Tanpa CAPEX <br/>
+                <span class="text-blue-600 text-[75%] underline decoration-blue-200 underline-offset-8">Layanan Berbasis Kinerja, Tanpa Investasi Awal</span>
+            </h2>
+            <p class="text-slate-500 max-w-3xl text-base sm:text-lg leading-relaxed italic">
+                Transformasikan air limbah menjadi aset bernilai. Dorong efisiensi biaya operasional yang lebih cerdas dan berkelanjutan melalui simulasi strategi reklamasi air di bawah ini.
+            </p>
+        </section>
+
+        <section id="optimasi" class="bg-white border border-slate-200 rounded-[2rem] p-6 md:p-8 shadow-sm space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Volume Air Existing (m³/hari)</label>
+                    <input type="number" id="vol_total" value="2000" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-2xl outline-none focus:border-blue-500 transition font-bold text-lg text-blue-600">
                 </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-                    Water-as-a-Service untuk Infrastruktur Air Bersih Tanpa CAPEX <br/>
-                    <span class="text-blue-600 text-[75%] underline decoration-blue-200 underline-offset-8">Dapatkan jasa pengolahan air dalam satu skema layanan berbasis kinerja, tanpa investasi awal</span>
-                </h2>
-                <p class="text-slate-500 max-w-2xl text-base sm:text-lg leading-relaxed">
-                    Transformasi cerdas air limbah menjadi air produksi pangan. Dirancang untuk potensi optimasi biaya operasional tanpa modifikasi struktur permanen pada sistem WWTP eksisting di PT CPI Salatiga.
-                </p>
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Harga PDAM (Rp/m³)</label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">Rp</span>
+                        <input type="number" id="pdam_price" value="14600" class="w-full bg-slate-50 border border-slate-200 p-4 pl-12 rounded-2xl outline-none focus:border-blue-500 transition font-bold text-lg">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Harga Jasa Invila™ (Rp/m³)</label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">Rp</span>
+                        <input type="number" id="invila_price" value="5500" class="w-full bg-slate-50 border border-slate-200 p-4 pl-12 rounded-2xl outline-none focus:border-blue-500 transition font-bold text-lg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+                <div class="lg:col-span-2 bg-slate-50/50 rounded-3xl p-6 border border-slate-100 h-80 relative">
+                    <canvas id="financialChart"></canvas>
+                </div>
+                
+                <div class="bg-blue-600 rounded-3xl p-8 text-white flex flex-col justify-between shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-[-20px] right-[-20px] opacity-10 group-hover:scale-110 transition-transform duration-700">
+                        <i data-lucide="zap" size="120"></i>
+                    </div>
+                    <div class="relative z-10 space-y-6">
+                        <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-md">
+                            <i data-lucide="shield-check" class="text-white" size="20"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-blue-200 font-bold text-[10px] tracking-[0.2em] uppercase">Estimasi Efisiensi Tahunan</p>
+                            <h4 class="text-2xl md:text-4xl font-black tracking-tight" id="efficiencyVal">Rp 0</h4>
+                        </div>
+                        <div class="grid grid-cols-1 gap-3 pt-2">
+                            <div class="flex items-center justify-between bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                                <span class="text-[9px] font-bold uppercase tracking-wider text-blue-200">Hemat per Bulan</span>
+                                <span class="font-bold text-sm" id="monthlyVal">Rp 0</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                                <span class="text-[9px] font-bold uppercase tracking-wider text-blue-200">Hemat per Hari</span>
+                                <span class="font-bold text-sm" id="dailyVal">Rp 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[9px] text-blue-100 italic opacity-80 mt-4 relative z-10">
+                        *Target reklamasi 80% volume harian.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section id="optimasi" class="space-y-8 text-left">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
-                    <div class="flex items-center gap-2 border-b border-slate-50 pb-4">
-                        <i data-lucide="trending-down" class="text-blue-600"></i>
-                        <h3 class="font-black text-xl text-slate-800 uppercase tracking-tighter">Potensi Optimasi Biaya Utilitas</h3>
-                    </div>
-                    <div class="h-64 md:h-80 relative">
-                        <canvas id="financialChart"></canvas>
-                    </div>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex gap-4 items-start">
+                <div class="p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0"><i data-lucide="dollar-sign"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-1 uppercase tracking-tight">Model Zero-CAPEX</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Infrastruktur didanai penuh oleh Invila™. Anda hanya membayar jasa berdasarkan volume air bersih yang dihasilkan.</p>
                 </div>
-
-                <div class="bg-blue-600 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between shadow-xl">
-                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                        <i data-lucide="zap" class="text-white"></i>
-                    </div>
-                    <div class="space-y-3 mt-6">
-                        <p class="text-blue-200 font-bold text-xs sm:text-sm tracking-widest uppercase">Potensi Efisiensi Tahunan</p>
-                        <h4 class="text-3xl sm:text-4xl md:text-5xl font-black leading-none tracking-tighter">Rp 3,276 Miliar</h4>
-                        <p class="text-xs text-blue-100 italic opacity-80">Berdasarkan substitusi minimum kontrak 30.000 m³/bulan dibandingkan tarif PDAM eksisting.</p>
-                    </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex gap-4 items-start">
+                <div class="p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><i data-lucide="line-chart"></i></div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-1 uppercase tracking-tight">Performance Based</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Biaya jasa dihitung berdasarkan meteran air produksi. Efisiensi tercapai tanpa risiko operasional.</p>
                 </div>
             </div>
         </section>
@@ -128,40 +160,33 @@
                     <h3 class="font-black text-xl text-slate-800 uppercase tracking-tighter">Metodologi & Kontrol</h3>
                 </div>
             </div>
-            <div class="lg:col-span-8 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm min-h-[450px] flex flex-col transition-all">
+            <div class="lg:col-span-8 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm min-h-[450px] flex flex-col">
                 <div id="phaseContent" class="flex-grow space-y-6"></div>
                 <div class="mt-8 pt-8 border-t border-slate-100 flex flex-col md:flex-row gap-6 items-center">
-                    <div class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[10px] font-bold shrink-0">
-                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        SCADA IOT ACTIVE
+                    <div class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[10px] font-bold">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div> SCADA IOT ACTIVE
                     </div>
-                    <div class="flex-grow h-20 w-full relative">
-                        <canvas id="scadaChart"></canvas>
-                    </div>
+                    <div class="flex-grow h-20 w-full relative"><canvas id="scadaChart"></canvas></div>
                 </div>
             </div>
         </section>
 
-        <section id="populasi" class="space-y-10 text-left">
-            <div class="bg-slate-900 rounded-[2rem] p-6 sm:p-12 text-white relative overflow-hidden shadow-2xl">
+        <section id="populasi" class="space-y-10">
+            <div class="bg-slate-900 rounded-[2rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl">
                 <div class="relative z-10 space-y-12">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                         <div class="flex items-center gap-6">
-                            <div class="p-4 bg-blue-600 rounded-2xl shadow-lg shrink-0">
-                                <i data-lucide="waves" size="32"></i>
-                            </div>
+                            <div class="p-4 bg-blue-600 rounded-2xl shadow-lg shrink-0"><i data-lucide="waves" size="32"></i></div>
                             <div>
                                 <h2 class="text-xl font-bold tracking-widest uppercase opacity-80">Kapasitas Terpasang</h2>
-                                <p class="text-blue-300 text-sm font-medium opacity-60">Rekam jejak operasional seluruh Indonesia</p>
+                                <p class="text-blue-300 text-sm font-medium opacity-60">Rekam jejak operasional di seluruh Indonesia</p>
                             </div>
                         </div>
-                        <button onclick="restartAnimations()" class="flex items-center gap-2 bg-slate-800 text-white font-bold px-6 py-3 rounded-xl hover:bg-slate-700 transition-all active:scale-95 text-sm">
-                            <i data-lucide="refresh-cw" size="18"></i>
-                            Lihat Kembali Pertumbuhan Kapasitas
+                        <button onclick="restartAnimations()" class="flex items-center gap-2 bg-slate-800 text-white font-bold px-6 py-3 rounded-xl hover:bg-slate-700 transition-all text-sm">
+                            <i data-lucide="refresh-cw" size="18"></i> Lihat Pertumbuhan
                         </button>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
                         <div class="space-y-2">
                             <p class="text-blue-400 font-bold text-xs uppercase tracking-widest">Kapasitas Per Bulan</p>
                             <div class="flex items-baseline gap-2"><span id="countMonthly" class="text-5xl md:text-7xl font-black tabular-nums">0</span><span class="text-2xl font-light opacity-50 italic">m³</span></div>
@@ -173,37 +198,25 @@
                     </div>
                 </div>
             </div>
-
-            <div class="flex items-center gap-4">
-                <h2 class="text-2xl font-black text-slate-800 whitespace-nowrap tracking-tight">Detail Populasi Proyek</h2>
-                <div class="h-px flex-grow bg-slate-200"></div>
-            </div>
             <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
     </main>
 
     <footer class="mt-20 pt-10 pb-12 bg-slate-950 text-center space-y-8 border-t border-slate-900">
-        <div class="space-y-4">
-            <div class="w-14 h-14 logo-gradient rounded-2xl flex items-center justify-center text-white font-black text-3xl shadow-[0_0_25px_rgba(37,99,235,0.6)] mx-auto border border-white/20">
-                <span class="drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">I</span>
-            </div>
-            <div class="space-y-1">
-                <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-[10px]">Engineering by Invila Engineering Systems</p>
-                <p class="text-slate-500 text-[9px] px-8 max-w-2xl mx-auto leading-relaxed italic opacity-70">
-                    Disclaimer: Draf analisis strategis untuk kepentingan internal PT Charoen Pokphand Indonesia.
-                </p>
-            </div>
+        <div class="w-14 h-14 logo-gradient rounded-2xl flex items-center justify-center text-white font-black text-3xl mx-auto border border-white/20">I</div>
+        <div class="space-y-1">
+            <p class="text-blue-400 font-bold uppercase tracking-[0.2em] text-[10px]">Engineering by Invila Engineering Systems</p>
+            <p class="text-slate-500 text-[9px] px-8 max-w-2xl mx-auto leading-relaxed italic opacity-70">Disclaimer: Draf analisis strategis untuk kepentingan internal PT Charoen Pokphand Indonesia.</p>
         </div>
-
         <div class="max-w-6xl mx-auto pt-8 border-t border-slate-900/50 px-4">
             <p class="text-slate-400 uppercase tracking-widest text-[10px] font-bold mb-8">Mitra Industri Strategis</p>
-            <div id="logoGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            </div>
+            <div id="logoGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
         </div>
     </footer>
 
     <script>
+        // Data & State
         const projects = [
             { id: 1, name: "Clarifier 6 PDAM Tirtanadi Sunggal", location: "Medan-Sunggal", year: "2013", client: "PDAM Tirtanadi", capacity: 1296000 },
             { id: 2, name: "Clarifier 1 PDAM Tirtanadi Sunggal", location: "Medan-Sunggal", year: "2014", client: "PDAM Tirtanadi", capacity: 1296000 },
@@ -217,34 +230,39 @@
         ];
 
         const phases = [
-            { id: 0, name: '1. AERO-PULSE', title: 'Optimalisasi Hidrolika & Aero-Shock', desc: 'Bayangkan lumpur di dalam air limbah itu seperti "balon udara kecil". Karena proses aerasi biologi (MBBR) yang sangat kuat, lumpur terjebak oleh gelembung udara mikroskopis sehingga mengapung. Aero-Shock memberikan "hentakan" udara bertekanan selama 0,5 detik di jalur air masuk untuk melucuti gelembung tersebut.', result: 'Lumpur kembali berat dan tenggelam secara alami.' },
-            { id: 1, name: '2. ZERO-SALT DOSING', title: 'Pengikatan Non-Garam & Aero-Coagulator', desc: 'Injeksi polimer kationik organik dengan dosis presisi auto-adjusting real-time untuk mengikat kotoran tanpa menambah beban garam (Klorida/TDS) ke dalam air. Strategi ini memastikan angka TDS dan TSS terjaga tetap rendah tanpa harus menggunakan mesin RO yang mahal.', result: 'TDS & TSS Terjaga Tanpa Mesin RO' },
-            { id: 2, name: '3. INVILA HYBRID LAMELLA', title: 'Sedimentasi High-Rate Kecepatan Tinggi', desc: 'Unit sedimentasi kecepatan tinggi dengan geometri lamella khusus. Footprint (kebutuhan lahan) 50% lebih hemat dibandingkan sistem konvensional namun dengan kapasitas jauh lebih besar.', result: 'Effluent < 3 NTU, Hemat Lahan 50%' },
-            { id: 3, name: '4. SMART AERO-SILICA-CARBON', title: 'Pemolesan Organik (SACF)', desc: 'Adsorpsi polutan organik dan gas terlarut menggunakan media Silica Sand dan Karbon Aktif premium. Efektif menyerap bau amis darah, warna, dan sisa bahan organik hingga COD < 20 mg/L. Sistem SACF berjalan otomatis dengan kontrol SCADA-IOT.', result: 'Effluent < 1 NTU, COD < 20 mg/L' },
-            { id: 4, name: '5. STERILISASI & BLENDING', title: 'Penyelesaian Mutu Akhir', desc: 'Injeksi klorin dosis presisi dipadukan dengan pencampuran cerdas (blending 10-15%) air segar untuk mengunci TDS < 300 mg/L sesuai Permenkes No. 2 Tahun 2023 tanpa biaya RO yang tinggi.', result: 'Target Mutu: E. Coli 0 (Mutlak)' }
+            { id: 0, name: '1. AERO-PULSE', title: 'Optimalisasi Hidrolika & Aero-Shock', desc: 'Aero-Shock memberikan hentakan udara bertekanan selama 0,5 detik di jalur air masuk untuk melucuti gelembung mikro pada lumpur.', result: 'Lumpur Kembali Berat & Tenggelam' },
+            { id: 1, name: '2. ZERO-SALT DOSING', title: 'Pengikatan Non-Garam', desc: 'Injeksi polimer kationik organik dengan dosis presisi auto-adjusting untuk mengikat kotoran tanpa menambah beban TDS.', result: 'TDS & TSS Terjaga Tanpa Mesin RO' },
+            { id: 2, name: '3. INVILA HYBRID LAMELLA', title: 'Sedimentasi High-Rate', desc: 'Unit sedimentasi kecepatan tinggi dengan geometri lamella khusus. Footprint 50% lebih hemat dibandingkan konvensional.', result: 'Effluent < 3 NTU, Hemat Lahan 50%' },
+            { id: 3, name: '4. SMART AERO-SILICA-CARBON', title: 'Pemolesan Organik (SACF)', desc: 'Adsorpsi polutan organik dan gas terlarut menggunakan media Silica Sand dan Karbon Aktif premium untuk menyerap bau amis.', result: 'Effluent < 1 NTU, COD < 20 mg/L' },
+            { id: 4, name: '5. STERILISASI & BLENDING', title: 'Penyelesaian Mutu Akhir', desc: 'Injeksi klorin presisi dipadukan dengan pencampuran cerdas (blending 10-15%) untuk mengunci TDS < 300 mg/L.', result: 'Target Mutu: E. Coli 0 (Mutlak)' }
         ];
 
         let finChart, scadaChart;
 
         function formatIDN(num) { return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
 
-        function animateValue(id, start, end, duration) {
-            const obj = document.getElementById(id);
-            if (!obj) return;
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerText = formatIDN(Math.floor(progress * (end - start) + start));
-                if (progress < 1) window.requestAnimationFrame(step);
-            };
-            window.requestAnimationFrame(step);
-        }
+        function calculateAndUpdate() {
+            const volTotal = parseFloat(document.getElementById('vol_total').value) || 0;
+            const pdamPrice = parseFloat(document.getElementById('pdam_price').value) || 0;
+            const invilaPrice = parseFloat(document.getElementById('invila_price').value) || 0;
+            const yieldRate = 0.8;
 
-        function restartAnimations() {
-            animateValue("countMonthly", 0, 6500700, 4000); 
-            animateValue("countYearly", 0, 78008400, 5000); 
-            projects.forEach(p => animateValue(`projectCap-${p.id}`, 0, p.capacity, 3000));
+            const volReclaimed = volTotal * yieldRate;
+            const dailySaving = volReclaimed * (pdamPrice - invilaPrice);
+            const monthlySaving = dailySaving * 30;
+            const annualSaving = monthlySaving * 12;
+
+            document.getElementById('efficiencyVal').innerText = 'Rp ' + formatIDN(Math.max(0, annualSaving));
+            document.getElementById('monthlyVal').innerText = 'Rp ' + formatIDN(Math.max(0, monthlySaving));
+            document.getElementById('dailyVal').innerText = 'Rp ' + formatIDN(Math.max(0, dailySaving));
+
+            if(finChart) {
+                const baseline = Array.from({length: 12}, (_, i) => Math.round(((i+1) * volReclaimed * pdamPrice * 30) / 1000000));
+                const optimized = Array.from({length: 12}, (_, i) => Math.round(((i+1) * volReclaimed * invilaPrice * 30) / 1000000));
+                finChart.data.datasets[0].data = baseline;
+                finChart.data.datasets[1].data = optimized;
+                finChart.update();
+            }
         }
 
         function initCharts() {
@@ -254,11 +272,18 @@
                 data: {
                     labels: Array.from({length: 12}, (_, i) => `Bln ${i+1}`),
                     datasets: [
-                        { label: 'Baseline (PDAM)', data: Array.from({length: 12}, (_, i) => (i+1) * 30000 * 14600), borderColor: '#94a3b8', borderDash: [5,5], fill: false, pointRadius: 0 },
-                        { label: 'Proyeksi (Invila)', data: Array.from({length: 12}, (_, i) => (i+1) * 30000 * 5500), borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.1)', fill: true, borderWidth: 3 }
+                        { label: 'Baseline (PDAM)', data: [], borderColor: '#cbd5e1', borderDash: [5,5], fill: false, pointRadius: 0 },
+                        { label: 'Optimasi (Invila)', data: [], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, borderWidth: 3, tension: 0.3 }
                     ]
                 },
-                options: { responsive: true, maintainAspectRatio: false }
+                options: { 
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        y: { ticks: { callback: v => 'Rp ' + v + 'jt', font: {size: 9} } },
+                        x: { ticks: { font: {size: 9} } }
+                    }
+                }
             });
 
             const scadaCtx = document.getElementById('scadaChart').getContext('2d');
@@ -276,6 +301,8 @@
                 scadaChart.data.datasets[0].data.push(275 + Math.random()*25);
                 scadaChart.update('none');
             }, 1500);
+
+            calculateAndUpdate();
         }
 
         function setPhase(idx) {
@@ -294,7 +321,27 @@
             lucide.createIcons();
         }
 
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerText = formatIDN(Math.floor(progress * (end - start) + start));
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function restartAnimations() {
+            animateValue("countMonthly", 0, 6500700, 3000); 
+            animateValue("countYearly", 0, 78008400, 4000); 
+            projects.forEach(p => animateValue(`projectCap-${p.id}`, 0, p.capacity, 2500));
+        }
+
         window.onload = () => {
+            // Setup Tabs
             const tabs = document.getElementById('phaseTabs');
             phases.forEach((p, i) => {
                 const btn = document.createElement('button');
@@ -304,13 +351,11 @@
                 tabs.appendChild(btn);
             });
 
-            const grid = document.getElementById('projectGrid');
-            grid.innerHTML = projects.map(p => `
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase">EST. ${p.year}</span>
-                    </div>
-                    <h3 class="text-base font-bold text-slate-800 leading-tight mb-3 h-10 overflow-hidden">${p.name}</h3>
+            // Setup Project Grid
+            document.getElementById('projectGrid').innerHTML = projects.map(p => `
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition-all text-left">
+                    <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase">EST. ${p.year}</span>
+                    <h3 class="text-base font-bold text-slate-800 leading-tight my-3 h-10 overflow-hidden">${p.name}</h3>
                     <div class="space-y-1 mb-6 text-xs text-slate-500">
                         <div class="flex items-center gap-2"><i data-lucide="map-pin" size="12"></i>${p.location}</div>
                         <div class="flex items-center gap-2"><i data-lucide="user" size="12"></i>${p.client}</div>
@@ -322,11 +367,9 @@
                             <span class="text-[10px] font-bold text-slate-400 ml-1">m³/bln</span>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                </div>`).join('');
 
-            // PERUBAHAN FINAL: INI ADALAH KODE YANG MENGHUBUNGKAN DENGAN GAMBAR ANDA DI GITHUB
-            const lGrid = document.getElementById('logoGrid');
+            // Setup Mitra
             const mitraData = [
                 { name: "Cemerlang", img: "cemerlang-samudra-kontrindo - Copy.png" },
                 { name: "Kievit", img: "kievit - Copy.png" },
@@ -338,12 +381,15 @@
                 { name: "United Tractors", img: "united-tractors.png" },
                 { name: "Wika", img: "wika.png" }
             ];
-
-            lGrid.innerHTML = mitraData.map(m => `
+            document.getElementById('logoGrid').innerHTML = mitraData.map(m => `
                 <div class="bg-white rounded-xl p-4 flex items-center justify-center shadow-sm h-24 overflow-hidden group hover:shadow-md transition-all">
                     <img src="${m.img}" alt="${m.name}" class="max-w-full max-h-full object-contain">
-                </div>
-            `).join('');
+                </div>`).join('');
+
+            // Listeners for simulator
+            ['vol_total', 'pdam_price', 'invila_price'].forEach(id => {
+                document.getElementById(id).addEventListener('input', calculateAndUpdate);
+            });
 
             initCharts(); 
             setPhase(0); 
